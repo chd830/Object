@@ -6,15 +6,6 @@ public class TicketSeller {
     }
 
     public void setllTo(Audience audience) {
-        if(audience.getBag().hasInvitation()) {
-            Ticket ticket = ticketOfiice.getTicket();
-            audience.getBag().setTicket(ticket);
-        }
-        else {
-            Ticket ticket = ticketOfiice.getTicket();
-            audience.getBag().minusAmount(ticket.getFee());
-            ticketOfiice.plusAmount(ticket.getFee());
-            audience.getBag().setTicket(ticket);
-        }
+        ticketOfiice.plusAmount(audience.buy(ticketOfiice.getTicket()));
     }
 }
