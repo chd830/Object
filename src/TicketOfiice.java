@@ -19,4 +19,8 @@ public class TicketOfiice {
     void plusAmount(long amount) {
         this.amount += amount;
     }
+
+    public void sellTicketTo(Audience audience) {
+        plusAmount(audience.buy(getTicket()));
+    }
 }

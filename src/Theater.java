@@ -6,6 +6,6 @@ public class Theater {
     }
 
     void enter(Audience audience) {
-        ticketSeller.setllTo(audience);
+        ticketSeller.sellTo(audience);
     }
 }
