@@ -22,4 +22,12 @@ public class Screening {
     public LocalDateTime getWhenScreened() {
         return whenScreened;
     }
+
+    private Money calculateFee(int audienceCount) {
+        return movie.calculateMovieFee(this).times(audienceCount);
+    }
+
+    public Reservation reserve(Customer customer, int audienceCount) {
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    }
 }
